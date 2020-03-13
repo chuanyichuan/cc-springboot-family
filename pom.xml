@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>spring-boot-study</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>spring-boot-study</name>
+
+    <modules>
+        <module>spring-boot-study-base</module>
+        <module>sendmail</module>
+        <module>activemq-demo</module>
+        <module>exception-demo</module>
+        <module>filter-demo</module>
+        <module>jpa-demo</module>
+        <module>qrcode</module>
+        <module>spirng-boot-kaptcha</module>
+        <module>spring-boot-encry</module>
+        <module>spring-boot-jwt</module>
+        <module>spring-boot-log</module>
+        <module>spring-boot-mybatis-annotation</module>
+        <module>spring-boot-mybatis-generator</module>
+        <module>spring-boot-mybatis-xml</module>
+        <module>spring-boot-read-yml</module>
+        <module>spring-boot-security</module>
+        <module>spring-boot-websocket</module>
+        <module>spring-cache-demo</module>
+        <module>spring-cloud-consumer-fegin</module>
+        <module>spring-cloud-consumer-fegin-hystrix</module>
+        <module>spring-cloud-consumer-ribbon</module>
+        <module>spring-cloud-eureka</module>
+        <module>spring-cloud-user-consumer</module>
+        <module>spring-cloud-user-service</module>
+        <module>spring-mybatis-generator</module>
+    </modules>
+
+</project>
