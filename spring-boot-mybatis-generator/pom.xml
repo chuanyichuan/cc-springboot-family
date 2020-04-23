@@ -30,6 +30,12 @@
             <version>5.1.39</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
         <!-- mybatis-starter  -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>

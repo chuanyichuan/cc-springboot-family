@@ -1,4 +1,3 @@
-
 server:
   port: 8081 #服务端口
 eureka:
@@ -7,4 +6,9 @@ eureka:
       defaultZone: http://localhost:9001/eureka/
 spring:
   application:
-    name: user-service
+    name: user-service2
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, refresh
