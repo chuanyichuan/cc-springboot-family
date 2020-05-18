@@ -3,10 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>spring-boot-study</artifactId>
+    <artifactId>spring-boot-family</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-study</name>
 
     <modules>
         <module>activemq-demo</module>
@@ -15,36 +14,35 @@
         <module>cc-spring-boot-starter-autoconfigurer</module>
         <module>cc-spring-boot-war</module>
         <module>cc-starter-demo</module>
-        <module>image-extractor</module>
-        <module>spring-boot-admin</module>
-        <module>spring-boot-bloomfilter</module>
-        <module>spring-boot-deferred</module>
-        <module>spring-boot-encry</module>
+        <module>cc-image-extractor</module>
+        <module>cc-spring-boot-admin</module>
+        <module>cc-spring-boot-bloomfilter</module>
+        <module>cc-spring-boot-deferred</module>
+        <module>cc-spring-boot-encry</module>
         <module>spring-boot-jwt</module>
-        <module>spring-boot-kafka</module>
-        <module>spring-boot-log</module>
-        <module>spring-boot-mybatis-annotation</module>
-        <module>spring-boot-mybatis-generator</module>
-        <module>spring-boot-mybatis-xml</module>
-        <module>spring-boot-read-yml</module>
+        <module>cc-spring-boot-kafka</module>
+        <module>cc-spring-boot-mdclog</module>
+        <module>cc-spring-boot-mybatis-annotation</module>
+        <module>cc-spring-boot-mybatis-generator</module>
+        <module>cc-spring-boot-mybatis-xml</module>
+        <module>cc-spring-boot-read-yml</module>
         <module>spring-boot-security</module>
-        <module>spring-boot-study-base</module>
-        <module>spring-boot-websocket</module>
-        <module>spring-cache-demo</module>
-        <module>spring-cloud-config</module>
-        <module>spring-cloud-config-client</module>
-        <module>spring-cloud-consul</module>
-        <module>spring-cloud-consul-client</module>
-        <module>spring-cloud-consumer-feign</module>
-        <module>spring-cloud-consumer-feign-hystrix</module>
-        <module>spring-cloud-consumer-ribbon</module>
-        <module>spring-cloud-cuser-consumer-hystrix</module>
-        <module>spring-cloud-cuser-feign</module>
-        <module>spring-cloud-cuser-service</module>
-        <module>spring-cloud-eureka</module>
-        <module>spring-cloud-eureka-health</module>
-        <module>spring-cloud-user-consumer</module>
-        <module>spring-cloud-user-service</module>
+        <module>cc-spring-boot-websocket</module>
+        <module>cc-spring-cache-demo</module>
+        <module>cc-spring-cloud-config</module>
+        <module>cc-spring-cloud-config-client</module>
+        <module>cc-spring-cloud-consul</module>
+        <module>cc-spring-cloud-consul-client</module>
+        <module>cc-spring-cloud-consumer-feign</module>
+        <module>cc-spring-cloud-consumer-feign-hystrix</module>
+        <module>cc-spring-cloud-consumer-ribbon</module>
+        <module>cc-spring-cloud-cuser-consumer-hystrix</module>
+        <module>cc-spring-cloud-cuser-feign</module>
+        <module>cc-spring-cloud-cuser-service</module>
+        <module>cc-spring-cloud-eureka</module>
+        <module>cc-spring-cloud-eureka-health</module>
+        <module>cc-spring-cloud-user-consumer</module>
+        <module>cc-spring-cloud-user-service</module>
     </modules>
 
 </project>
