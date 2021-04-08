@@ -1,13 +1,14 @@
 package cc.kevinlu.demo.service.impl;
 
-import cc.kevinlu.demo.repository.UserRepository;
-import cc.kevinlu.demo.service.UserService;
-import com.example.demo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+
+import cc.kevinlu.demo.entity.User;
+import cc.kevinlu.demo.repository.UserRepository;
+import cc.kevinlu.demo.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -29,13 +30,11 @@ public class UserServiceImpl implements UserService {
         repository.deleteById(id);
     }
 
-
     //修改数据后更新缓存
     @Override
     @CachePut(cacheNames = "cacheManager", key = "'USER:'+#updateUser.id", unless = "#result == null")
     public User updateUser(User updateUser) {
         return repository.save(updateUser);
     }
-
 
 }

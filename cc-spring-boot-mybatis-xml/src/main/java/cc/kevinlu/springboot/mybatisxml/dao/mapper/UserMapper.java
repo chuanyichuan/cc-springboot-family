@@ -1,10 +1,8 @@
 package cc.kevinlu.springboot.mybatisxml.dao.mapper;
 
+import java.util.List;
 
 import cc.kevinlu.springboot.mybatisxml.entity.User;
-import com.example.springboot.mybatisxml.entity.User;
-
-import java.util.List;
 
 public interface UserMapper {
 

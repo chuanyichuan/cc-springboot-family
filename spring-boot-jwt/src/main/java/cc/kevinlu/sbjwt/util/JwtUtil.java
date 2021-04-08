@@ -12,7 +12,8 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.example.springbootjwt.entity.User;
+
+import cc.kevinlu.sbjwt.entity.User;
 
 /**
  * @description: Jwt工具类，生成JWT和认证

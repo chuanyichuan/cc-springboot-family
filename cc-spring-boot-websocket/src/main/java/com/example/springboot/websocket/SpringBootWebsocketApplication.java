@@ -1,4 +1,4 @@
-package com.example.springboot.websocket;
+package cc.kevinlu.springboot.websocket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.example.springboot.websocket.dto;
+package cc.kevinlu.springboot.websocket.dto;
 
 public class SocketMessage {
 

@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(value = "com.example.springbootmybatis.generator.dao")
+@MapperScan(value = "cc.kevinlu.springbootmybatis.generator.dao")
 public class SpringBootMybatisGeneratorApplication {
 
     public static void main(String[] args) {

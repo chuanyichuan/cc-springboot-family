@@ -1,8 +1,13 @@
 package cc.kevinlu.springcloudcuserservice.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 public class UserController {
@@ -11,6 +16,16 @@ public class UserController {
     public String getUser(@PathVariable(name = "id") Integer id) {
         System.out.println("id = " + id);
         return "name = " + id;
+    }
+
+    @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public void upload(@RequestParam("message") String message, @RequestPart("attachment") MultipartFile file) {
+        System.out.println("file = " + file);
+        try (InputStream ins = file.getInputStream(); OutputStream os = new FileOutputStream("a.txt")) {
+            IOUtils.copy(ins, os);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

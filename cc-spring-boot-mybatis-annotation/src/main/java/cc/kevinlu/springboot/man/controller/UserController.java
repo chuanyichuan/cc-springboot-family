@@ -1,14 +1,15 @@
 package cc.kevinlu.springboot.man.controller;
 
-import com.example.springboot.mybatisannotation.entity.User;
-import cc.kevinlu.springboot.man.service.UserService;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import cc.kevinlu.springboot.man.entity.User;
+import cc.kevinlu.springboot.man.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * UserController
@@ -32,7 +33,7 @@ public class UserController {
 
     @GetMapping("/add")
     public User add(User user) {
-        int num =  userService.add(user);
+        int num = userService.add(user);
         return user;
     }
 }

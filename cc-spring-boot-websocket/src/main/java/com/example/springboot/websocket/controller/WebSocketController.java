@@ -1,19 +1,19 @@
-package com.example.springboot.websocket.controller;
+package cc.kevinlu.springboot.websocket.controller;
 
-import com.example.springboot.websocket.util.WebSocketServer;
+import java.io.IOException;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
+import cc.kevinlu.springboot.websocket.util.WebSocketServer;
 
 /**
  */
 @RestController
 @RequestMapping("/api/ws")
 public class WebSocketController {
-
 
     /**
      * 群发消息内容
@@ -39,7 +39,8 @@ public class WebSocketController {
      * @return
      */
     @RequestMapping(value = "/sendOne", method = RequestMethod.GET)
-    public String sendOneMessage(@RequestParam(required = true) String message, @RequestParam(required = true) String id) {
+    public String sendOneMessage(@RequestParam(required = true) String message,
+                                 @RequestParam(required = true) String id) {
         try {
             WebSocketServer.SendMessage(message, id);
         } catch (IOException e) {

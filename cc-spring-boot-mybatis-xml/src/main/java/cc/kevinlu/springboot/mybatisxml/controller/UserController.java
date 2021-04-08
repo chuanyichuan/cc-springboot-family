@@ -1,15 +1,15 @@
 package cc.kevinlu.springboot.mybatisxml.controller;
 
-import cc.kevinlu.springboot.mybatisxml.entity.User;
-import com.example.springboot.mybatisxml.entity.User;
-import cc.kevinlu.springboot.mybatisxml.service.UserService;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import cc.kevinlu.springboot.mybatisxml.entity.User;
+import cc.kevinlu.springboot.mybatisxml.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * UserController
@@ -29,7 +29,7 @@ public class UserController {
      *
      */
     @GetMapping("/queryAllUsers")
-    public List<User> queryAllUsers(){
+    public List<User> queryAllUsers() {
         return userService.queryAllUsers();
     }
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.kevinlu.cc.seata.dao.mapper.codeac.UserMapper">
+    <resultMap id="BaseResultMap" type="cc.kevinlu.cc.seata.dao.model.source2.User">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="sex" jdbcType="INTEGER" property="sex"/>
+        <result column="des" jdbcType="VARCHAR" property="des"/>
+        <result column="user_type" jdbcType="INTEGER" property="userType"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="cc.kevinlu.cc.seata.dao.model.source2.User">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into user (`name`, `password`, sex,
+        des, user_type)
+        values (#{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER},
+        #{des,jdbcType=VARCHAR}, #{userType,jdbcType=INTEGER})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="cc.kevinlu.cc.seata.dao.model.source2.User">
+    update user
+    set `name` = #{name,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      des = #{des,jdbcType=VARCHAR},
+      user_type = #{userType,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, `name`, `password`, sex, des, user_type
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+    select id, `name`, `password`, sex, des, user_type
+    from user
+  </select>
+</mapper>

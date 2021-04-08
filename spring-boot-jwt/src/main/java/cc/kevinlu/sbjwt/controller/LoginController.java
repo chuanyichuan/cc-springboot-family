@@ -6,8 +6,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.springbootjwt.entity.User;
-
+import cc.kevinlu.sbjwt.entity.User;
 import cc.kevinlu.sbjwt.util.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
 

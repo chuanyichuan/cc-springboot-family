@@ -2,7 +2,7 @@ package cc.kevinlu.sbm.generator.service;
 
 import java.util.List;
 
-import com.example.springbootmybatis.generator.entity.User;
+import cc.kevinlu.sbm.generator.entity.User;
 
 public interface UserService {
     List<User> queryAllUsers();

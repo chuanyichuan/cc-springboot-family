@@ -4,15 +4,14 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import cc.kevinlu.sbm.generator.dao.UserMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.springbootmybatis.generator.entity.User;
+import cc.kevinlu.sbm.generator.dao.UserMapper;
+import cc.kevinlu.sbm.generator.entity.User;
 import cc.kevinlu.sbm.generator.entity.UserRole;
 import cc.kevinlu.sbm.generator.service.UserRoleService;
 import cc.kevinlu.sbm.generator.service.UserService;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -20,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class UserServiceImpl implements UserService {
 
     @Resource
-    private UserMapper userMapper;
+    private UserMapper      userMapper;
 
     @Resource
     private UserRoleService userRoleService;

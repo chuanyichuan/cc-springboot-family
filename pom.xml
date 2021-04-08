@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>cc.kevinlu</groupId>
-    <artifactId>cc-spring-boot-family</artifactId>
+    <artifactId>spring-boot-family</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -21,13 +21,16 @@
         <module>cc-spring-boot-encry</module>
         <module>spring-boot-jwt</module>
         <module>cc-spring-boot-kafka</module>
+        <module>cc-spring-boot-ldap</module>
         <module>cc-spring-boot-mdclog</module>
         <module>cc-spring-boot-mybatis-annotation</module>
         <module>cc-spring-boot-mybatis-generator</module>
         <module>cc-spring-boot-mybatis-xml</module>
+        <module>cc-spring-boot-rabbitmq</module>
         <module>cc-spring-boot-read-yml</module>
         <module>spring-boot-security</module>
         <module>cc-spring-boot-websocket</module>
+        <module>cc-spring-boot-xxljob</module>
         <module>cc-spring-cache-demo</module>
         <module>cc-spring-cloud-config</module>
         <module>cc-spring-cloud-config-client</module>

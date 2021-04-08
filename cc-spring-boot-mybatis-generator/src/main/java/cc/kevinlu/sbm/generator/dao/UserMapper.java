@@ -1,7 +1,8 @@
 package cc.kevinlu.sbm.generator.dao;
 
-import com.example.springbootmybatis.generator.entity.User;
 import java.util.List;
+
+import cc.kevinlu.sbm.generator.entity.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);

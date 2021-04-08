@@ -1,9 +1,8 @@
 package cc.kevinlu.springboot.man.service;
 
-
-import com.example.springboot.mybatisannotation.entity.User;
-
 import java.util.List;
+
+import cc.kevinlu.springboot.man.entity.User;
 
 public interface UserService {
     List<User> queryAllUsers();

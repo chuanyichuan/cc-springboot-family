@@ -8,7 +8,7 @@
         <version>2.2.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
+    <groupId>cc.kevinlu</groupId>
     <artifactId>image-extractor</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>image-extractor</name>

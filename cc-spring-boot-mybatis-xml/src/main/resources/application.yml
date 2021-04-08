@@ -7,6 +7,6 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
 #mybatis配置
 mybatis:
-  typeAliasesPackage: com.example.springboot.mybatisxml.entity
+  typeAliasesPackage: cc.kevinlu.springboot.mybatisxml.entity
   mapperLocations: classpath:mapper/*.xml
   config-location: classpath:mybatis-config.xml

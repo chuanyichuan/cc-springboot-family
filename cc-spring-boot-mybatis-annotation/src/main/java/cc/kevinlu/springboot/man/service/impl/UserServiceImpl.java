@@ -1,22 +1,27 @@
 package cc.kevinlu.springboot.man.service.impl;
 
-import cc.kevinlu.springboot.man.dao.mapper.UserMapper;
-import com.example.springboot.mybatisannotation.entity.User;
-import cc.kevinlu.springboot.man.service.UserService;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import cc.kevinlu.springboot.man.dao.mapper.UserMapper;
+import cc.kevinlu.springboot.man.dao.mapper.UserRoleMapper;
+import cc.kevinlu.springboot.man.entity.User;
+import cc.kevinlu.springboot.man.entity.UserRole;
+import cc.kevinlu.springboot.man.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserMapper userMapper;
+    private UserMapper     userMapper;
+    @Autowired
+    private UserRoleMapper userRoleMapper;
 
     @Override
     public List<User> queryAllUsers() {
@@ -27,9 +32,15 @@ public class UserServiceImpl implements UserService {
     /**
      * 增加用户
      */
-    @Transactional(propagation = Propagation.NESTED)
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public int add(User user) {
-        return userMapper.add(user);
+        userMapper.add(user);
+        UserRole userRole = new UserRole();
+        userRole.setRoleId(1);
+        //            userRole.setUserId(user.getId());
+        userRole.setUserId(null);
+        userRoleMapper.add(userRole);
+        return 1;
     }
 }
