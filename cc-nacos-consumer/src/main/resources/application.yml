@@ -1,0 +1,10 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: nacos-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 139.129.93.162:8848
+        namespace: dev

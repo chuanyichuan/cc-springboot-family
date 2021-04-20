@@ -9,7 +9,7 @@ public class Main {
         try {
             while (true) {
                 i++;
-                System.out.println("i = " + i);
+                //                System.out.println("i = " + i);
                 new HoldThread().start();
             }
         } catch (Exception e) {

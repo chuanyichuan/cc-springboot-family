@@ -31,15 +31,15 @@
         <javaTypeResolver type="cc.kevinlu.generator.mybatis.JavaTypeResolverImpl"/>
 
         <!-- 实体类生成的位置 -->
-        <javaModelGenerator targetPackage="cc.kevinlu.meeting.data.model"
+        <javaModelGenerator targetPackage="cc.kevinlu.nacos1.data.model"
                             targetProject="${datasource.dir}/src/main/java"/>
         <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="${datasource.dir}/src/main/resources"/>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cc.kevinlu.meeting.data.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cc.kevinlu.nacos1.data.mapper"
                              targetProject="${datasource.dir}/src/main/java"/>
 
 
-        <table tableName="meeting_log" domainObjectName="MeetingLogDO" mapperName="MeetingLogMapper"
+        <table tableName="storage_tbl" domainObjectName="StorageDO" mapperName="StorageMapper"
                enableCountByExample="true"
                enableDeleteByExample="true" enableInsert="true" enableSelectByExample="true"
                enableUpdateByExample="true"
