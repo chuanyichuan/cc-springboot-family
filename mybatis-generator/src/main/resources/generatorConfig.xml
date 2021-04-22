@@ -31,11 +31,11 @@
         <javaTypeResolver type="cc.kevinlu.generator.mybatis.JavaTypeResolverImpl"/>
 
         <!-- 实体类生成的位置 -->
-        <javaModelGenerator targetPackage="cc.kevinlu.nacos1.data.model"
+        <javaModelGenerator targetPackage="cc.kevinlu.account.data.model"
                             targetProject="${datasource.dir}/src/main/java"/>
         <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="${datasource.dir}/src/main/resources"/>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cc.kevinlu.nacos1.data.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cc.kevinlu.account.data.mapper"
                              targetProject="${datasource.dir}/src/main/java"/>
 
 

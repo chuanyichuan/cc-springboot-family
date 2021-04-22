@@ -1,0 +1,54 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: storage
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  #    alibaba:
+  #      seata:
+  #        tx-service-group: storage-service-group
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_storage?useUnicode=true&characterEncoding=utf8&autoReconnect=true&useSSL=false&nullCatalogMeansCurrent=true&serverTimezone=GMT%2b8
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      # 空闲连接存活最大时间，默认600000（10分钟）
+      idle-timeout: 180000
+      # 连接池最大连接数，默认是10
+      maximum-pool-size: 10
+      # 此属性控制从池返回的连接的默认自动提交行为,默认值：true
+      auto-commit: true
+      # 连接池名称
+      pool-name: MyHikariCP
+      # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      # 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+mybatis:
+  mapper-locations: classpath:*/mapper/*.xml
+  type-aliases-package: cc.kevinlu.storage.data.model
+
+#logging:
+#  level:
+#    io.seata: debug
+
+seata:
+  tx-service-group: order-group
+  application-id: storage-service-group
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+  service:
+    grouplist:
+      default: 127.0.0.1:8091
+    vgroup-mapping:
+      order-group: default

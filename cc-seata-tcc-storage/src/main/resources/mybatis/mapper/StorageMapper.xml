@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cc.kevinlu.account.data.mapper.AccountMapper">
-    <resultMap id="BaseResultMap" type="cc.kevinlu.account.data.model.AccountDO">
+<mapper namespace="cc.kevinlu.storage.data.mapper.StorageMapper">
+    <resultMap id="BaseResultMap" type="cc.kevinlu.storage.data.model.StorageDO">
         <id column="id" jdbcType="INTEGER" property="id"/>
-        <result column="user_id" jdbcType="VARCHAR" property="userId"/>
-        <result column="money" jdbcType="INTEGER" property="money"/>
+        <result column="commodity_code" jdbcType="VARCHAR" property="commodityCode"/>
+        <result column="count" jdbcType="INTEGER" property="count"/>
+        <result column="price" jdbcType="DECIMAL" property="price"/>
     </resultMap>
     <sql id="Example_Where_Clause">
         <where>
@@ -68,9 +69,9 @@
     </sql>
     <sql id="Base_Column_List">
         id
-        , user_id, money
+        , commodity_code, count, price
     </sql>
-    <select id="selectByExample" parameterType="cc.kevinlu.account.data.model.AccountDOExample"
+    <select id="selectByExample" parameterType="cc.kevinlu.storage.data.model.StorageDOExample"
             resultMap="BaseResultMap">
         select
         <if test="distinct">
@@ -78,7 +79,7 @@
         </if>
         'true' as QUERYID,
         <include refid="Base_Column_List"/>
-        from account_tbl
+        from storage_tbl
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
@@ -89,67 +90,78 @@
     <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from account_tbl
+        from storage_tbl
         where id = #{id,jdbcType=INTEGER}
     </select>
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         delete
-        from account_tbl
+        from storage_tbl
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <delete id="deleteByExample" parameterType="cc.kevinlu.account.data.model.AccountDOExample">
-        delete from account_tbl
+    <delete id="deleteByExample" parameterType="cc.kevinlu.storage.data.model.StorageDOExample">
+        delete from storage_tbl
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </delete>
-    <insert id="insert" parameterType="cc.kevinlu.account.data.model.AccountDO">
+    <insert id="insert" parameterType="cc.kevinlu.storage.data.model.StorageDO">
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into account_tbl (user_id, money)
-        values (#{userId,jdbcType=VARCHAR}, #{money,jdbcType=INTEGER})
+        insert into storage_tbl (commodity_code, count, price
+        )
+        values (#{commodityCode,jdbcType=VARCHAR}, #{count,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}
+        )
     </insert>
-    <insert id="insertSelective" parameterType="cc.kevinlu.account.data.model.AccountDO">
+    <insert id="insertSelective" parameterType="cc.kevinlu.storage.data.model.StorageDO">
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into account_tbl
+        insert into storage_tbl
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="userId != null">
-                user_id,
+            <if test="commodityCode != null">
+                commodity_code,
             </if>
-            <if test="money != null">
-                money,
+            <if test="count != null">
+                count,
+            </if>
+            <if test="price != null">
+                price,
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="userId != null">
-                #{userId,jdbcType=VARCHAR},
+            <if test="commodityCode != null">
+                #{commodityCode,jdbcType=VARCHAR},
             </if>
-            <if test="money != null">
-                #{money,jdbcType=INTEGER},
+            <if test="count != null">
+                #{count,jdbcType=INTEGER},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DECIMAL},
             </if>
         </trim>
     </insert>
-    <select id="countByExample" parameterType="cc.kevinlu.account.data.model.AccountDOExample"
+    <select id="countByExample" parameterType="cc.kevinlu.storage.data.model.StorageDOExample"
             resultType="java.lang.Long">
-        select count(*) from account_tbl
+        select count(*) from storage_tbl
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
     </select>
     <update id="updateByExampleSelective" parameterType="map">
-        update account_tbl
+        update storage_tbl
         <set>
             <if test="record.id != null">
                 id = #{record.id,jdbcType=INTEGER},
             </if>
-            <if test="record.userId != null">
-                user_id = #{record.userId,jdbcType=VARCHAR},
+            <if test="record.commodityCode != null">
+                commodity_code = #{record.commodityCode,jdbcType=VARCHAR},
             </if>
-            <if test="record.money != null">
-                money = #{record.money,jdbcType=INTEGER},
+            <if test="record.count != null">
+                count = #{record.count,jdbcType=INTEGER},
+            </if>
+            <if test="record.price != null">
+                price = #{record.price,jdbcType=DECIMAL},
             </if>
         </set>
         <if test="_parameter != null">
@@ -157,30 +169,35 @@
         </if>
     </update>
     <update id="updateByExample" parameterType="map">
-        update account_tbl
+        update storage_tbl
         set id = #{record.id,jdbcType=INTEGER},
-        user_id = #{record.userId,jdbcType=VARCHAR},
-        money = #{record.money,jdbcType=INTEGER}
+        commodity_code = #{record.commodityCode,jdbcType=VARCHAR},
+        count = #{record.count,jdbcType=INTEGER},
+        price = #{record.price,jdbcType=DECIMAL}
         <if test="_parameter != null">
             <include refid="Update_By_Example_Where_Clause"/>
         </if>
     </update>
-    <update id="updateByPrimaryKeySelective" parameterType="cc.kevinlu.account.data.model.AccountDO">
-        update account_tbl
+    <update id="updateByPrimaryKeySelective" parameterType="cc.kevinlu.storage.data.model.StorageDO">
+        update storage_tbl
         <set>
-            <if test="userId != null">
-                user_id = #{userId,jdbcType=VARCHAR},
+            <if test="commodityCode != null">
+                commodity_code = #{commodityCode,jdbcType=VARCHAR},
             </if>
-            <if test="money != null">
-                money = #{money,jdbcType=INTEGER},
+            <if test="count != null">
+                count = #{count,jdbcType=INTEGER},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DECIMAL},
             </if>
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cc.kevinlu.account.data.model.AccountDO">
-        update account_tbl
-        set user_id = #{userId,jdbcType=VARCHAR},
-            money   = #{money,jdbcType=INTEGER}
+    <update id="updateByPrimaryKey" parameterType="cc.kevinlu.storage.data.model.StorageDO">
+        update storage_tbl
+        set commodity_code = #{commodityCode,jdbcType=VARCHAR},
+            count          = #{count,jdbcType=INTEGER},
+            price          = #{price,jdbcType=DECIMAL}
         where id = #{id,jdbcType=INTEGER}
     </update>
 </mapper>
