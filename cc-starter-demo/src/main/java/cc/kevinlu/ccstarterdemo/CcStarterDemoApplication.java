@@ -2,10 +2,14 @@ package cc.kevinlu.ccstarterdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@SpringBootApplication
+import cc.kevinlu.threadpool.monitor.prop.ThreadPoolConfigurationProperties;
+
+@SpringBootApplication(scanBasePackages = { "cc.kevinlu.threadpool.monitor", "cc.kevinlu.ccstarterdemo" })
 @EnableAspectJAutoProxy(proxyTargetClass = true)
+@EnableConfigurationProperties(ThreadPoolConfigurationProperties.class)
 public class CcStarterDemoApplication {
 
     public static void main(String[] args) {
